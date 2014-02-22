@@ -30,3 +30,4 @@ halt/rootonly
 #study encrypted stuff
 halt/closecrypts
 system-prep/roroot
+halt/sync
