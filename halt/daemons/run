@@ -1,2 +1,3 @@
 #!/bin/sh
-exec nsvc -d $(< /etc/ninit/daemons/depends)
+nsvc -r $(tac /etc/ninit/gettys/depends)
+nsvc -d $(tac /etc/ninit/daemons/depends)
