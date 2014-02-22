@@ -1,0 +1,43 @@
+#Done
+system-prep/apifs
+
+#Done
+system-prep/roroot
+
+#WIP to done-ish
+system-prep/console-cfg
+
+#WIP to done ish
+system-prep/clock
+
+#Done
+system-prep/udev
+
+#Done
+system-prep/lo-on
+
+#Done
+system-prep/hostname
+
+#system-prep/raids-btr-lvm #need to separate these
+system-prep/fsck
+
+#Done
+system-prep/rwroot
+
+#Done
+system-prep/mount-rest
+
+#Done
+system-prep/swapon
+
+#system-prep/set-tz #not needed since we're taking the lazy route?
+
+#Done
+system-prep/random-seed
+
+#Done
+system-prep/enable-login
+
+#Done
+system-prep/save-dmesg

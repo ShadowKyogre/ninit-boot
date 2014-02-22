@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cp /var/lib/random-seed /dev/urandom &>/dev/null || true
+( umask 077; dd if=/dev/urandom of=/var/lib/random-seed count=1 bs=512 &>/dev/null )

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+test -f /etc/rc.conf && . /etc/rc.conf
+hwclock --systohc ${HARDWARECLOCK:+--$(echo $HARDWARECLOCK |tr A-Z a-z)}

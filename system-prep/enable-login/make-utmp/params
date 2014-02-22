@@ -1,0 +1,7 @@
+-m0664
+-o
+root
+-g
+utmp
+/dev/null
+/run/utmp

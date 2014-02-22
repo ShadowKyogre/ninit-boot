@@ -1,0 +1,5 @@
+-f
+/etc/nologin
+/forcefsck
+/forcequotacheck
+/fastboot

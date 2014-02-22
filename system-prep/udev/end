@@ -1,0 +1,6 @@
+#!/bin/sh
+
+udevadm trigger --action=add --type=subsystems
+udevadm trigger --action=add --type=devices
+modprobe -ab "" "${MODULES[@]}" || true
+udevadm settle

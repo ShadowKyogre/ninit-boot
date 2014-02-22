@@ -1,0 +1,13 @@
+#!/bin/sh
+
+test -f /etc/vconsole.conf && . /etc/vconsole.conf
+test -f /etc/rc.conf && . /etc/rc.conf
+# update this later to include 
+
+for i in /dev/tty[0-9]*;do
+  unicode_start <$i
+  [[ $CONSOLEFONT ]] && setfont ${CONSOLEMAP:+-m $CONSOLEMAP} $CONSOLEFONT -C $i
+done
+
+
+loadkeys -q ${KEYMAP:-us}

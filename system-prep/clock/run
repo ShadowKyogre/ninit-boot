@@ -1,0 +1,6 @@
+#!/bin/sh
+
+test -f /etc/rc.conf && . /etc/rc.conf
+
+exec hwclock --systz \
+  ${HARDWARECLOCK:+--$(echo $HARDWARECLOCK |tr A-Z a-z) --noadjfile}

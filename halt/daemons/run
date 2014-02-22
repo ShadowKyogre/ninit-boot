@@ -1,0 +1,2 @@
+#!/bin/sh
+exec nsvc -d $(< /etc/ninit/daemons/depends)

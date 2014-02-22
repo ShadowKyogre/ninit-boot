@@ -1,0 +1,1 @@
+Write the daemons you want to start here into the depends. Starting stuff in parallel is the default unless a sync file's put in here. There's also some sample daemons to help you get started.

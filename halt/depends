@@ -1,0 +1,32 @@
+halt/daemons
+halt/oneshots
+
+#Done!
+halt/save-random
+
+#WIP Done ish
+halt/save-clock
+
+#halt/write-halt #unneeded?
+#halt/lvm #need to write
+
+#Done!
+halt/udev
+
+#halt/kill-stragglers #unneeded since ninit does this?
+
+#Done!
+halt/notmp
+
+#Done!
+halt/swapoff
+
+#Done!
+halt/noapifs
+
+#Done!
+halt/rootonly
+
+#study encrypted stuff
+halt/closecrypts
+system-prep/roroot

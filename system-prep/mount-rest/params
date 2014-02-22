@@ -1,0 +1,5 @@
+-a
+-t
+"nosysfs,nonfs,nonfs4,nosmbfs,nocifs"
+-O
+no_netdev

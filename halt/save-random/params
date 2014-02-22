@@ -1,0 +1,4 @@
+if=/dev/urandom
+of=/var/lib/random-seed
+count=1
+bs=512
