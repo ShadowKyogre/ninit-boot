@@ -19,11 +19,21 @@ system-prep/lo-on
 #Done
 system-prep/hostname
 
-#system-prep/raids-btr-lvm #need to separate these
+#Done
+system-prep/raids
+#Done
+system-prep/btr
+#Done
+system-prep/lvm
+#Working on ATM
+system-prep/uncrypt
+system-prep/lvm
+#WIP, but needs to check for forced FSCK
 system-prep/fsck
 
 #Done
 system-prep/rwroot
+system-prep/lvm-monitor
 
 #Done
 system-prep/mount-rest
