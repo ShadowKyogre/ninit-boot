@@ -9,3 +9,4 @@ mkdir -p -m0755 /run/lock /run/lock/lvm /run/lvm /run/user /dev/pts /dev/shm
 
 mountpoint -q /dev/pts || mount -n -t devpts devpts /dev/pts -o mode=0620,gid=5,nosuid,noexec
 mountpoint -q /dev/shm || mount -n -t tmpfs shm /dev/shm -o mode=1777,nosuid,nodev
+mountpoint -q /tmp || mount -n -t tmpfs /tmp -o mode=1777,strictatime
