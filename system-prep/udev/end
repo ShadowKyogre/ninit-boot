@@ -2,5 +2,5 @@
 
 udevadm trigger --action=add --type=subsystems
 udevadm trigger --action=add --type=devices
-modprobe -ab "" "${MODULES[@]}" || true
+modprobe -ab $(cat /{{usr/{,local/},}lib,etc,run}/modules-load.d/*.conf 2> /dev/null) || true
 udevadm settle
