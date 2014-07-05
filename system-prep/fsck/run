@@ -1,1 +1,53 @@
-/usr/bin/fsck
+#!/bin/sh
+
+#srcs:https://bitbucket.org/TZ86/initscripts-fork/src/f4ae470b72d19b6c1a51732ad7d2827bdd247821/scripts/functions?at=master
+#     https://bitbucket.org/TZ86/initscripts-fork/src/f4ae470b72d19b6c1a51732ad7d2827bdd247821/scripts/rc.sysinit?at=master
+if [[ ! -x $(type -P fsck) ]]; then
+	exit 0
+fi
+
+NETFS="nfs,nfs4,smbfs,cifs,codafs,ncpfs,shfs,fuse,fuseblk,glusterfs,davfs,fuse.glusterfs"
+
+if [[ -f /forcefsck || $(< /proc/cmdline) =~ forcefsck ]]; then
+	FORCEFSCK="-f"
+elif [[ -f /fastboot || $(< /proc/cmdline) =~ fastboot ]]; then
+	return 0
+elif findmnt / --options rw &>/dev/null; then
+	IGNORE_MOUNTED="-M"
+fi
+
+fsck $@ no${NETFS//,/,no},noopts=_netdev ${IGNORE_MOUNTED} -- ${FORCEFSCK}
+declare -r fsckret=$?
+
+if (( ($fsckret | 33) == 33 ));then
+	exit 0
+else
+	if (( $fsckret & 2 )); then
+		echo
+		echo "********************** REBOOT REQUIRED *********************"
+		echo "*                                                          *"
+		echo "* The system will be rebooted automatically in 15 seconds. *"
+		echo "*                                                          *"
+		echo "************************************************************"
+		echo
+		sleep 15
+	else
+		echo
+		echo "*****************  FILESYSTEM CHECK FAILED  ****************"
+		echo "*                                                          *"
+		echo "*  Please repair manually and reboot. Note that the root   *"
+		echo "*  file system is currently mounted read-only. To remount  *"
+		echo "*  it read-write, type: mount -o remount,rw /              *"
+		echo "*  When you exit the maintenance shell, the system will    *"
+		echo "*  reboot automatically.                                   *"
+		echo "*                                                          *"
+		echo "************************************************************"
+		echo
+		sulogin -p
+	fi
+	echo "Automatic reboot in progress..."
+	umount -a
+	mount -o remount,ro /
+	ninit-reboot RESTART
+	exit 0
+fi
