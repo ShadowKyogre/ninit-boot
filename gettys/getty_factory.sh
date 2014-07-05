@@ -2,7 +2,7 @@
 # Usage: getty_factory.sh getty {1..3}
 
 cmd="${1}"
-getty_dir="$(dirname $0)"
+getty_dir="$(realpath $(dirname $0))"
 shift
 
 cp /dev/null "${getty_dir}/depends"

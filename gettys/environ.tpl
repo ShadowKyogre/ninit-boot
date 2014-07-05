@@ -1,3 +1,4 @@
+TERM=linux
 LANG=
 LANGUAGE=
 LC_CTYPE=
