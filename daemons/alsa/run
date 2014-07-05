@@ -1,6 +1,5 @@
 #!/bin/sh
 
 trap "alsactl -s kill save_and_quit" SIGTERM
-alsactl $@
-tail -f /dev/null & wait
+alsactl $@ & wait
 #http://stackoverflow.com/questions/9052847/implementing-infinite-wait-in-shell-scripting <- source
