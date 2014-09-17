@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/lib/systemd/scripts/dkms stop

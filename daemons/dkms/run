@@ -1,0 +1,4 @@
+#!/bin/sh
+trap './stop' SIGTERM
+#we need to add that for ninit to consider it active after exec
+/usr/lib/systemd/scripts/dkms start && tail -f /dev/null & wait
