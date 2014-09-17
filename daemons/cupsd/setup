@@ -1,0 +1,16 @@
+#!/bin/sh
+if [[ ! -d /var/cache/cups ]] ; then
+    install -m775 -g 7 -o 0 -d /var/cache/cups
+fi
+
+if [[ ! -d /var/cache/cups/rss ]] ; then
+    install -m775 -g 7 -o 0 -d /var/cache/cups/rss
+fi
+
+if [[ ! -d /run/cups ]] ; then
+    install -m755 -g 7 -o 0 -d /run/cups
+fi
+
+if [[ ! -d /run/cups/certs ]] ; then
+    install -m755 -g 3 -o 2 -d /run/cups/certs
+fi
