@@ -21,6 +21,7 @@ halt/kill-stragglers
 #Done!
 halt/notmp
 
+halt/force_changes
 #Done!
 halt/swapoff
 
