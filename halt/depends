@@ -13,7 +13,7 @@ halt/save-clock
 #Done!
 halt/udev
 
-#halt/kill-stragglers #unneeded since ninit does this?
+halt/kill-stragglers #need to write
 
 #Done!
 halt/notmp
