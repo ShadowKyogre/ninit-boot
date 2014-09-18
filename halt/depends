@@ -13,7 +13,8 @@ halt/save-clock
 #Done!
 halt/udev
 
-halt/kill-stragglers #need to write
+#need to write
+halt/kill-stragglers
 
 #Done!
 halt/notmp
