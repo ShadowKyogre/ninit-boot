@@ -1,5 +1,5 @@
-halt/daemons
-halt/oneshots
+#halt/daemons
+#halt/oneshots
 
 #Done!
 halt/save-random
@@ -11,23 +11,23 @@ halt/save-clock
 #halt/lvm #need to write
 
 #Done!
-halt/udev
+#halt/udev
 
-halt/kill-stragglers #need to write
-
-#Done!
-halt/notmp
+#halt/kill-stragglers #need to write
 
 #Done!
-halt/swapoff
+#halt/notmp
 
 #Done!
-halt/noapifs
+#halt/swapoff
 
 #Done!
-halt/rootonly
+#halt/noapifs
+
+#Done!
+#halt/rootonly
 
 #study encrypted stuff
 halt/closecrypts
-system-prep/roroot
-halt/sync
+#system-prep/roroot
+#halt/sync
