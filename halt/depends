@@ -1,5 +1,7 @@
-halt/daemons
-halt/oneshots
+#halt/daemons 
+#^not a good idea to call this because nsvc can't get a lock on /etc/ninit/{in,out}
+#Furthermore, ninit already shuts these down before running halt or reboot
+#halt/oneshots
 
 #Done!
 halt/save-random
