@@ -1,0 +1,3 @@
+#!/bin/sh
+trap '/usr/lib/ufw/ufw-init stop' SIGTERM
+/usr/lib/ufw/ufw-init start
