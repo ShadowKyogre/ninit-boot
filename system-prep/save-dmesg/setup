@@ -1,0 +1,4 @@
+#!/bin/sh
+if [[ ! -d /var/log ]] ; then
+    install -m755 -d /var/log
+fi
